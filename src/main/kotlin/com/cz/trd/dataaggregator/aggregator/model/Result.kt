@@ -27,10 +27,10 @@ class Result {
     val profitableOrders: Int = 0
 
     @Column(nullable = false)
-    val losOrders: Int = 0
+    val lossOrders: Int = 0
 
     @Column(nullable = false)
-    val timeFrame: Int = 1
+    val timeFrame: Int = 5
 
     @Column()
     val isAspirant: Boolean = false
