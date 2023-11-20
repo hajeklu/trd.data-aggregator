@@ -15,6 +15,9 @@ class Result {
     val id: Long = 0
 
     @Column(nullable = false)
+    val symbol: String = "Null"
+
+    @Column(nullable = false)
     val ema1: Int = 0
 
     @Column(nullable = false)
