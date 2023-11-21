@@ -14,8 +14,8 @@ class ResultController(private val resultRepository: ResultRepository) {
 
     @GetMapping("/latest/{symbol}")
     fun getLatestAspirantResultBySymbol(@PathVariable symbol: String): ResponseEntity<Result> {
-        val result: Result? = resultRepository.findFirstBySymbolAndIsAspirantFalseOrderByCreatedAtDesc(symbol).orElse(null)
+        val result: Result? =
+            resultRepository.findFirstBySymbolAndIsAspirantFalseOrderByCreatedAtDesc(symbol).orElse(null)
         return result?.let { ResponseEntity.ok(it) } ?: ResponseEntity.notFound().build()
     }
 }
-git add
