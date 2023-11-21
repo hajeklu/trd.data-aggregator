@@ -1,5 +1,6 @@
 package com.cz.trd.dataaggregator.aggregator.model
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -29,7 +30,8 @@ class Result {
     @Column(nullable = false)
     val profitableOrders: Int = 0
 
-    @Column(nullable = false)
+    @JsonProperty("lossOrders")
+    @Column(nullable = false, name = "loss_orders")
     val lossOrders: Int = 0
 
     @Column(nullable = false)
