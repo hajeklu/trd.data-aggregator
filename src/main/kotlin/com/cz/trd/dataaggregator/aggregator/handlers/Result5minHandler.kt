@@ -10,7 +10,7 @@ class RabbitMQListener(val resultRepository: ResultRepository) {
 
     private val objectMapper = jacksonObjectMapper()
 
-    @RabbitListener(queues = ["Results_5"])
+    @RabbitListener(queues = ["Results"])
     fun receiveMessage(message: String) {
         println(message)
         try {
