@@ -9,13 +9,18 @@ class OrderEntity {
     var id: Long = 0
 
     @Column()
+    var position: Long = 0
+
+    @Column()
     var symbol: String = "No symbol"
 
+    @Enumerated(EnumType.STRING)
     @Column()
-    var price: Double = 0.0
+    var orderType: OrderType = OrderType.BUY
 
+    @Enumerated(EnumType.STRING)
     @Column()
-    var type: OrderType = OrderType.BUY
+    var state: OrderState = OrderState.UNKNOWN
 
     @Column()
     var volume: Double = 0.1
@@ -35,17 +40,11 @@ class OrderEntity {
     @Column()
     var openProfit: Double = 0.0
 
-    @Column(nullable = true)
-    var emaShort = 0
-
-    @Column(nullable = true)
-    var emaLong = 0
+    @Column()
+    var openTime: LocalDateTime = LocalDateTime.now()
 
     @Column()
-    var openTime: Long = 0
-
-    @Column()
-    var closeTime: Long = 0
+    var closeTime: LocalDateTime = LocalDateTime.now()
 
     @Column(nullable = false, updatable = false)
     var createdAt: LocalDateTime? = null
